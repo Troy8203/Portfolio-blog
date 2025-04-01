@@ -1,7 +1,28 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
-<footer>
-  <h4>footer</h4>
+<footer class="text-foreground-500 py-6 mt-8">
+  <div class="container mx-auto flex justify-center gap-2 text-foreground-400">
+    <a href="mailto:linux@example.com">
+      <Icon width="30" height="30" name="uim:linux" />
+    </a>
+    <a href="https://www.telegram.com" target="_blank">
+      <Icon width="30" height="30" name="uim:telegram" />
+    </a>
+    <a href="https://www.github.com" target="_blank">
+      <Icon width="30" height="30" name="uim:github" />
+    </a>
+    <a href="https://www.linkedin.com" target="_blank">
+      <Icon width="30" height="30" name="uim:linkedin" />
+    </a>
+  </div>
+  <div class="container mx-auto text-center">
+    <p class="text-sm">
+      Este sitio web está hecho para compartir soluciones de CTF de parte de los
+      Pingüinos Asesinos.
+      <br />
+      Todos los derechos reservados © 2025 Pingüinos Asesinos.
+    </p>
+  </div>
 </footer>
