@@ -1,0 +1,99 @@
+---
+title: "Título del Post"
+date: "2023-11-25"
+author: "Tu Nombre"
+description: "Ejemplo completo de MDX en Astro"
+coverImage: "/images/cover.jpg"
+---
+
+## Modificación
+
+Se debe modificar el archivo de configuración de mysql instalado por xampp
+
+[![image.png](https://i.postimg.cc/yxLwYknn/image.png)](https://postimg.cc/YLmXd25m)
+
+> Añadir lo siguiente para habilitar las conexiones de otras IPs
+
+```
+bind-address = 0.0.0.0
+```
+
+Una vez hecho esto note que en [link](http://localhost/phpmyadmin/index.php?route=/server/privileges&viewing_mode=server) se lograra observar los usuarios existentes
+
+> Por defecto MySQL tiene la siguiente configuración
+
+```txt
+Usuario=root
+Contraseña=
+```
+
+Si tiene problemas con permisos, ejecutar la siguiente linea de código
+
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '';
+FLUSH PRIVILEGES;
+```
+
+### Creación de la Base de Datos
+
+Se creara una pequeña base de datos llamada alimentos
+
+> Copiar el código a la consola para la creación de la base de datos
+
+```sql
+CREATE DATABASE IF NOT EXISTS alimentos;
+
+USE alimentos;
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    stock INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS productos_categorias (
+    producto_id INT,
+    categoria_id INT,
+    PRIMARY KEY (producto_id, categoria_id),
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
+    FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE CASCADE
+);
+
+INSERT INTO categorias (nombre) VALUES ('Frutas'), ('Verduras'), ('Lácteos'), ('Carnes');
+
+INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
+('Manzana', 'Manzana roja fresca', 1.50, 100),
+('Lechuga', 'Lechuga orgánica', 0.90, 50),
+('Leche', 'Leche entera 1L', 1.20, 200),
+('Pollo', 'Pechuga de pollo fresca', 5.00, 80);
+```
+
+### Configuración
+
+#### Visual Studio Code
+
+Instale la extensión [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+
+[![image.png](https://i.postimg.cc/tCkjYbJ7/image.png)](https://postimg.cc/gnx5TfvP)
+
+Instale la extension [Controlador MySQL](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql)
+[![image.png](https://i.postimg.cc/FsdyKrDV/image.png)](https://postimg.cc/WhVFWvRd)
+Para configurar, modifique el archivo de conexiones con la siguiente configuración
+
+[![image.png](https://i.postimg.cc/SQWX1nT5/image.png)](https://postimg.cc/qgvMzvdX)
+
+> Remplace el campo `IP` con la dirección IP del servidor, tomar en cuenta que por defecto MySQL usa el puerto `3306`
+
+#### MySQL Workbench
+
+Crear una nueva conexión con la siguiente configuración
+[![image.png](https://i.postimg.cc/76KyrTjS/image.png)](https://postimg.cc/5YQrwj4t)
+
+> Remplace el campo `IP` con la dirección IP del servidor, tomar en cuenta que por defecto MySQL usa el puerto `3306`
