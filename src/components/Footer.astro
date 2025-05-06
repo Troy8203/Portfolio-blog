@@ -4,25 +4,22 @@ import { Icon } from "astro-icon/components";
 
 <footer class="text-foreground-500 py-6 mt-8">
   <div class="container mx-auto flex justify-center gap-2 text-foreground-400">
-    <a href="mailto:linux@example.com">
-      <Icon width="30" height="30" name="uim:linux" />
+    <a href="mailto:this@example.com" class="hover:text-red-300 transition-all duration-200 ease-in-out">
+      <Icon width="30" height="30" name="tabler:mail-filled" />
     </a>
-    <a href="https://www.telegram.com" target="_blank">
-      <Icon width="30" height="30" name="uim:telegram" />
+    <a href="https://www.github.com" target="_blank" class="hover:text-foreground-100 transition-all duration-200 ease-in-out">
+      <Icon width="30" height="30" name="tabler:brand-github-filled" />
     </a>
-    <a href="https://www.github.com" target="_blank">
-      <Icon width="30" height="30" name="uim:github" />
-    </a>
-    <a href="https://www.linkedin.com" target="_blank">
-      <Icon width="30" height="30" name="uim:linkedin" />
+    <a href="https://www.linkedin.com" target="_blank" class="hover:text-[#73b3f2] transition-all duration-200 ease-in-out">
+      <Icon width="30" height="30" name="tabler:brand-linkedin-filled" />
     </a>
   </div>
-  <div class="container mx-auto text-center">
-    <p class="text-sm">
-      Este sitio web está hecho para compartir soluciones de CTF de parte de los
-      Pingüinos Asesinos.
-      <br />
-      Todos los derechos reservados © 2025 Pingüinos Asesinos.
+  <div class="container mx-auto text-center text-sm">
+    <p class="italic">Make sure that you know that we all human beings, we all on the same Earth. So with that being said, you can achieve anything
+      <br>
+      if not more than what you see other people achieving. And that's facts.</p>
+    <p class="text-foreground-300 font-bold mt-2">
+      © 2025 <span class="uppercase bg-primary-500 text-content0 px-1 text-center rounded-sm">dev</span> Troy
     </p>
   </div>
 </footer>

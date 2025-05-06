@@ -15,17 +15,17 @@
 }
 
 @theme {
-    --color-primary-50: #fef3f2;
-    --color-primary-100: #ffe4e1;
-    --color-primary-200: #ffcdc8;
-    --color-primary-300: #ffaba2;
-    --color-primary-400: #fd7a6c;
-    --color-primary-500: #f66151;
-    --color-primary-600: #e23320;
-    --color-primary-700: #bf2616;
-    --color-primary-800: #9d2417;
-    --color-primary-900: #82241a;
-    --color-primary-950: #470e08;
+    --color-primary-50: #fcf3ff;
+    --color-primary-100: #f7e3ff;
+    --color-primary-200: #f0cdff;
+    --color-primary-300: #e4a5ff;
+    --color-primary-400: #d46cff;
+    --color-primary-500: #c435ff;
+    --color-primary-600: #b60fff;
+    --color-primary-700: #ab00ff;
+    --color-primary-800: #8806c3;
+    --color-primary-900: #6f079c;
+    --color-primary-950: #4d0076;
 
     --color-foreground-50: #FFFFFF;
     --color-foreground-100: #F0F0F0;
@@ -39,10 +39,10 @@
     --color-foreground-900: #313131;
     --color-foreground-950: #171717;
 
-    --color-content0: #0f0f0f;
-    --color-content1: #171717;
-    --color-content2: #1e1e1e;
-    --color-content3: #262626;
+    --color-content0: #1f1f1f;
+    --color-content1: #2f2f2f;
+    --color-content2: #3f3f3f;
+    --color-content3: #505050;
 
     --font-md: "CaskaydiaCove", "monospace";
     --font-base: "PT Sans", sans-serif;
