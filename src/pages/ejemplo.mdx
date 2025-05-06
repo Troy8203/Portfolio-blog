@@ -79,9 +79,19 @@ _Texto en cursiva_
 
 ## Bloque de código
 
-```python
-def hola_mundo():
-    print("¡Hola, mundo!")
+```js
+function testArrowAndTripleEquals() {
+  const isEqual = (a, b) => a === b;
+
+  // Prueba simple
+  if (isEqual(5, 5)) {
+    console.log("✅ Arrow function y triple igual (===) funcionan correctamente.");
+  } else {
+    console.log("❌ Algo no está funcionando con => o ===.");
+  }
+}
+
+testArrowAndTripleEquals();
 ```
 
 ---

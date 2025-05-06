@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'CaskaydiaCove';
+    src: url('/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('/fonts/PTSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @theme {
     --color-primary-50: #fef3f2;
     --color-primary-100: #ffe4e1;
@@ -29,4 +43,11 @@
     --color-content1: #171717;
     --color-content2: #1e1e1e;
     --color-content3: #262626;
+
+    --font-md: "CaskaydiaCove", "monospace";
+    --font-base: "PT Sans", sans-serif;
+}
+
+body {
+    font-family: var(--font-base);
 }

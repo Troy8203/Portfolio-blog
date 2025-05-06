@@ -6,94 +6,102 @@ description: "Ejemplo completo de MDX en Astro"
 coverImage: "/images/cover.jpg"
 ---
 
-## Modificación
+#  Weekly Focus: Language · Movement · Code
 
-Se debe modificar el archivo de configuración de mysql instalado por xampp
+> **Daily Rhythm:**  
+> – 1h English  
+> – 1h Exercise  
+> – 1h Programming
+>
+> **Weekly Goal:** Progress through consistency
 
-[![image.png](https://i.postimg.cc/yxLwYknn/image.png)](https://postimg.cc/YLmXd25m)
+---
 
-> Añadir lo siguiente para habilitar las conexiones de otras IPs
+##  Monday
 
-```
-bind-address = 0.0.0.0
-```
+**Focus Areas:**  
+–  Speaking (Fluency & Confidence)  
+–  Physical training  
+–  Programming – _Problem solving_
 
-Una vez hecho esto note que en [link](http://localhost/phpmyadmin/index.php?route=/server/privileges&viewing_mode=server) se lograra observar los usuarios existentes
+[ ] English  
+[ ] Exercise  
+[ ] Code
 
-> Por defecto MySQL tiene la siguiente configuración
+---
 
-```txt
-Usuario=root
-Contraseña=
-```
+##  Tuesday
 
-Si tiene problemas con permisos, ejecutar la siguiente linea de código
+**Focus Areas:**  
+–  Listening (Comprehension)  
+–  Physical training  
+–  Programming – _Debugging practice_
 
-```sql
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '';
-FLUSH PRIVILEGES;
-```
+[ ] English  
+[ ] Exercise  
+[ ] Code
 
-### Creación de la Base de Datos
+---
 
-Se creara una pequeña base de datos llamada alimentos
+##  Wednesday
 
-> Copiar el código a la consola para la creación de la base de datos
+**Focus Areas:**  
+– 󰬴 Grammar (Structures & Accuracy)  
+–  Physical training  
+–  Programming – _Syntax & patterns_
 
-```sql
-CREATE DATABASE IF NOT EXISTS alimentos;
+[ ] English  
+[ ] Exercise  
+[ ] Code
 
-USE alimentos;
+---
 
-CREATE TABLE IF NOT EXISTS productos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    precio DECIMAL(10,2) NOT NULL,
-    stock INT NOT NULL DEFAULT 0
-);
+##  Thursday
 
-CREATE TABLE IF NOT EXISTS categorias (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL UNIQUE
-);
+**Focus Areas:**  
+–  Vocabulary (New words + usage)  
+–  Physical training  
+–  Programming – _Mini project or function_
 
-CREATE TABLE IF NOT EXISTS productos_categorias (
-    producto_id INT,
-    categoria_id INT,
-    PRIMARY KEY (producto_id, categoria_id),
-    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
-    FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE CASCADE
-);
+[ ] English  
+[ ] Exercise  
+[ ] Code
 
-INSERT INTO categorias (nombre) VALUES ('Frutas'), ('Verduras'), ('Lácteos'), ('Carnes');
+---
 
-INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
-('Manzana', 'Manzana roja fresca', 1.50, 100),
-('Lechuga', 'Lechuga orgánica', 0.90, 50),
-('Leche', 'Leche entera 1L', 1.20, 200),
-('Pollo', 'Pechuga de pollo fresca', 5.00, 80);
-```
+##  Friday
 
-### Configuración
+**Focus Areas:**  
+– 󰈙 Writing (Express clearly)  
+–  Physical training  
+–  Programming – _Code review or refactor_
 
-#### Visual Studio Code
+[ ] English  
+[ ] Exercise  
+[ ] Code
 
-Instale la extensión [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
+---
 
-[![image.png](https://i.postimg.cc/tCkjYbJ7/image.png)](https://postimg.cc/gnx5TfvP)
+##  Saturday
 
-Instale la extension [Controlador MySQL](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql)
-[![image.png](https://i.postimg.cc/FsdyKrDV/image.png)](https://postimg.cc/WhVFWvRd)
-Para configurar, modifique el archivo de conexiones con la siguiente configuración
+**Focus Areas:**  
+–  Review (Go back + reinforce)  
+–  Physical training  
+–  Programming – _Build something fun or review concepts_
 
-[![image.png](https://i.postimg.cc/SQWX1nT5/image.png)](https://postimg.cc/qgvMzvdX)
+[ ] English  
+[ ] Exercise  
+[ ] Code
 
-> Remplace el campo `IP` con la dirección IP del servidor, tomar en cuenta que por defecto MySQL usa el puerto `3306`
+---
 
-#### MySQL Workbench
+##  Sunday
 
-Crear una nueva conexión con la siguiente configuración
-[![image.png](https://i.postimg.cc/76KyrTjS/image.png)](https://postimg.cc/5YQrwj4t)
+**Focus Areas:**  
+–  Rest or light revision  
+–  Gentle movement  
+–  Programming – _Open-ended time: explore, read, chill_
 
-> Remplace el campo `IP` con la dirección IP del servidor, tomar en cuenta que por defecto MySQL usa el puerto `3306`
+[ ] English  
+[ ] Exercise  
+[ ] Code
