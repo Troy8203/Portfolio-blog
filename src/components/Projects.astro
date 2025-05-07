@@ -1,4 +1,59 @@
 ---
+import Card from './Card.astro';
 
+const items = [
+  {
+    title: 'AstrasIO',
+    description: 'This is a landing page about Plants can exist with different conditions of the environment like humidity, temperature, light, etc.',
+    image: 'https://i.postimg.cc/PxxFqBSm/image.png',
+    repository: 'https://github.com/Troy8203/Spaceapps',
+    link: 'https://astra-io.netlify.app/',
+    tecnologias: [
+        { titulo: 'Vite', color: 'bg-[#646CFF]', iconName: 'lineicons:vite' },
+      { titulo: 'React', color: 'bg-[#61DAFB]', iconName: 'lineicons:react' },
+      { titulo: 'Tailwind', color: 'bg-[#06B6D4]', iconName: 'lineicons:tailwindcss' },
+      { titulo: 'Typescript', color: 'bg-[#3178C6]', iconName: 'lineicons:typescript' },
+    ],
+  },
+  {
+    title: 'Hoolie Blog',
+    description: 'This is a blog created with jekill to make it easier to create a blog with markdown files to show information about analytics and desygn of system of information.',
+    image: 'https://i.postimg.cc/bYkPQnz4/image.png',
+    repository: 'https://github.com/Troy8203/HooliLandingPage',
+    link: 'https://troy8203.github.io/HooliLandingPage/',
+    tecnologias: [
+      { titulo: 'Jekyll', color: 'bg-[#CC0000]', iconName: 'lineicons:injection-1' },
+      { titulo: 'Bootstrap', color: 'bg-[#7952B3]', iconName: 'lineicons:bootstrap' },
+      { titulo: 'Javascript', color: 'bg-[#F7DF1E]', iconName: 'lineicons:javascript' },
+    ],
+  },
+  {
+    title: 'Browser Detection',
+    description: 'This is a little vanilla project to detect the browser that the user is using, it shows the name of the browser, with resposive design and dark mode.',
+    image: 'https://i.postimg.cc/mDdHjnN2/image.png',
+    repository: 'https://github.com/Troy8203/BrowserDectetion',
+    link: 'https://troy8203.github.io/BrowserDectetion/',
+    tecnologias: [
+    { titulo: 'Html', color: 'bg-[#E34F26]', iconName: 'lineicons:html5' },
+    { titulo: 'Css', color: 'bg-[#1572B6]', iconName: 'lineicons:css3' },
+    { titulo: 'Javascript', color: 'bg-[#F7DF1E]', iconName: 'lineicons:javascript' },
+    ],
+  },
+];
 ---
 
+<section class="max-w-6xl mx-auto my-40 p-6">
+  <h1 class="text-3xl font-bold mb-8 text-center">Proyectos realizados</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {items.map((item) => (
+      <Card 
+        title={item.title}
+        description={item.description}
+        image={item.image}
+        link={item.link}
+        repository={item.repository}
+        tecnologias={item.tecnologias}
+      />
+    ))}
+  </div>
+</section>

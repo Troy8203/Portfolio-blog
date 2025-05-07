@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Tech {
+  titulo: string;
+  color: string;
+  iconName: string;
+}
+
+interface CardProps {
+  title: string;
+  description: string;
+  image?: string;
+  link: string;
+  repository?: string;
+  tecnologias?: Tech[];
+}
+
+const { title, description, image, link, repository, tecnologias = [] } = Astro.props as CardProps;
+---
+
+<div class="bg-content1 rounded-lg overflow-hidden hover:scale-105 transition-all duration-200 ease-in-out">
+  {image && <img src={image} alt={title} class="w-full h-48 object-cover" />}
+
+  <div class="p-4">
+    <a href={`${repository}`}  target="_blank" class="hover:text-primary-400 flex flex-row items-center mb-2 text-xl flex-1">
+        <Icon name='tabler:brand-github-filled' />
+        {title}
+    </a>
+    
+    {tecnologias.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+        {tecnologias.map((tech) => (
+            <div class={`text-white text-xs px-2 py-1 rounded flex flex-row items-center justify-center flex-nowrap gap-1 ${tech.color}`}>
+            {tech.iconName && <Icon width={15} height={15}  name={tech.iconName} />}
+            {tech.titulo}
+          </div>
+        ))}
+      </div>
+    )}
+
+    <p class="text-foreground-700 text-sm mb-4">{description}</p>
+
+    {link && (
+        <a href={link} target="_blank" class="text-primary-400 flex justify-end items-center hover:underline">
+            More info
+        </a>
+      )}
+  </div>
+</div>
