@@ -9,6 +9,6 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    site: 'https://troy8203.github.io/Portfolio-blog',
-    base: 'https://github.com/Troy8203/Portfolio-blog',
+    site: 'https://troy8203.github.io',
+    base: '/Portfolio-blog',
 });
