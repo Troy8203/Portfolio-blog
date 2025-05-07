@@ -39,6 +39,7 @@
     --color-foreground-900: #313131;
     --color-foreground-950: #171717;
 
+    --color-content-1: #171717;
     --color-content0: #1f1f1f;
     --color-content1: #2f2f2f;
     --color-content2: #3f3f3f;
@@ -50,4 +51,44 @@
 
 body {
     font-family: var(--font-base);
+}
+
+.md-content {
+    @apply text-foreground-300;
+    @apply [&>h1]:bg-gradient-to-br! [&>h1]:from-blue-500! [&>h1]:to-primary-500! [&>h1]:bg-clip-text! [&>h1]:text-transparent! [&>h1]:mb-12!;
+    @apply [&>h1,h2,h3,h4,h5,h6]:font-bold [&>h1,h2,h3,h4,h5,h6]:font-base;
+    @apply [&>h1,h2,h3,h4,h5,h6]:my-4;
+    @apply [&>h1,h2,h3,h4,h5,h6]:text-foreground-100;
+    @apply [&>h1]:text-4xl [&>h1]:text-center;
+    @apply [&>h2]:text-3xl;
+    @apply [&>h3]:text-2xl;
+    @apply [&>h4]:text-xl;
+    @apply [&>h5]:text-lg;
+    @apply [&>h6]:text-base;
+    @apply [&>hr]:bg-white/20 [&>hr]:w-full [&>hr]:h-0.5 [&>hr]:my-5 [&>hr]:mx-1 [&>hr]:border-none [&>hr]:rounded-md;
+    @apply [&>ul>li,ol>li,p>a]:text-foreground-200;
+    @apply [&>ul,ul>li>ul>li]:list-[square] [&>ul,ul>li>ul>li]:marker:text-primary-500 [&>ul,ul>li>ul]:list-inside;
+    @apply [&>ul>li>ul>li]:indent-4;
+    @apply [&>ol,ol>li>ol>li]:list-decimal [&>ol,ol>li>ol>li]:marker:text-primary-500 [&>ol,ol>li>ol]:list-inside;
+    @apply [&>ol>li>ol>li]:indent-4;
+    @apply [&>p>a]:italic [&>p>a]:underline [&>p>a]:hover:text-foreground-400;
+    @apply [&>p>code]:bg-content-1 [&>p>code]:text-primary-400 [&>p>code]:text-sm [&>p>code]:px-1.5 [&>p>code]:py-1 [&>p>code]:rounded-md ;
+    @apply [&>pre]:!bg-content-1 [&>pre]:!p-3 [&>pre]:!my-3 [&>pre]:!rounded-md [&>pre]:text-xs;
+    @apply [&>pre>code]:font-md!;
+    @apply [&>blockquote]:border-l-2 [&>blockquote]:border-l-primary-500 [&>blockquote]:text-xs;
+    @apply [&>blockquote,table]:p-3 [&>blockquote,table]:my-3;
+    @apply [&>table]:w-full;
+    @apply [&>table>thead]:bg-content2;
+    @apply [&>table>thead>tr>th]:py-2;
+    @apply [&>table>tbody>tr>td]:py-0.5;
+    @apply [&>p>a>img]:rounded-md [&>p>a>img]:my-3 [&>p>a>img]:border-2 [&>p>a>img]:border-transparent [&>p>a>img]:hover:border-primary-500;
+    @apply [&>p>img]:rounded-md [&>p>img]:my-3;
+    @apply [&>p>img]:max-w-3xl;
+}
+
+.blog p:has(img), .blog p>a:has(img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto;
 }

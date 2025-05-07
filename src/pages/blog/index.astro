@@ -1,37 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Ejemplo from "../ejemplo.mdx";
+import Ejemplo from "../test2.mdx";
 ---
 
 <Layout>
-  <h1>Blog</h1>
-  <p>Bienvenido a nuestro blog.</p>
   <article
-    class="
-    text-foreground-300
-    [&>h1]:text-primary-500 [&>h1,h2,h3,h4,h5,h6]:font-bold [&>h1,h2,h3,h4,h5,h6]:font-base
-    [&>h1,h2,h3,h4,h5,h6]:my-4
-    [&>h1,h2,h3,h4,h5,h6]:text-foreground-100
-    [&>h1]:text-4xl [&>h1]:text-center
-    [&>h2]:text-3xl
-    [&>h3]:text-2xl
-    [&>h4]:text-xl
-    [&>h5]:text-lg
-    [&>h6]:text-md
-    [&>hr]:bg-white/20 [&>hr]:w-full [&>hr]:h-0.5 [&>hr]:my-5 [&>hr]:mx-1 [&>hr]:border-none [&>hr]:rounded-md
-    [&>ul>li,ol>li,p>a]:text-foreground-200
-    [&>p>a]:italic [&>p>a]:underline [&>p>a]:hover:text-foreground-400
-    [&>p>code]:bg-content2 [&>p>code]:text-base [&>p>code]:px-3 [&>p>code]:py-1 [&>p>code]:rounded-md 
-    [&>pre]:!bg-content2 [&>pre]:!p-3 [&>pre]:!my-3 [&>pre]:!rounded-md [&>pre]:text-xs
-    [&>pre>code]:font-md!
-    [&>blockquote]:border-l-2 [&>blockquote]:border-l-primary-500 [&>blockquote]:text-xs
-    [&>blockquote,table]:p-3 [&>blockquote,table]:my-3
-    [&>table]:w-full
-    [&>table>thead]:bg-content2
-    [&>table>thead>tr>th]:py-2
-    [&>table>tbody>tr>td]:py-0.5
-    [&>p>a>img]:rounded-md [&>p>a>img]:my-3"
-  >
+    class="blog md-content">
     <Ejemplo />
   </article>
 </Layout>
